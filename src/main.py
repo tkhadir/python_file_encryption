@@ -39,8 +39,8 @@ def getMsgToEncrypt(msg):
 
 def encrypt(msg):
     iv = urandom(8)
-    cipher = blowfish.Cipher(b"test")
-    result = b"".join(cipher.encrypt_cbc_cts(getMsgToEncrypt(msg), iv))
+    cipher = blowfish.Cipher(b"here put your key")
+    result = b"".join(cipher.encrypt_cbc(getMsgToEncrypt(msg), iv))
     print("iv="+ str(iv))
     return result
 
